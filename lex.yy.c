@@ -322,9 +322,6 @@ void yyfree ( void *  );
 #define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_at_bol)
 
 /* Begin user sect3 */
-
-#define yywrap() (/*CONSTCOND*/1)
-#define YY_SKIP_YYWRAP
 typedef flex_uint8_t YY_CHAR;
 
 FILE *yyin = NULL, *yyout = NULL;
@@ -354,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 6
-#define YY_END_OF_BUFFER 7
+#define YY_NUM_RULES 9
+#define YY_END_OF_BUFFER 10
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -365,26 +362,26 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[17] =
     {   0,
-        0,    0,    7,    5,    6,    5,    5,    5,    1,    0,
-        1,    0,    2,    3,    4,    0
+        0,    0,   10,    9,    1,    4,    7,    8,    8,    3,
+        6,    2,    5,    8,    8,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    3,    1,    4,    5,    1,    6,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        3,    4,    5,    1,    6,    1,    7,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    1,    1,    1,
+        1,    1,    1,    1,    9,    9,    9,    9,    9,    9,
+        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
+        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
+       10,    1,   11,    1,   12,    1,    9,    9,    9,    9,
 
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
+        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
+        9,    9,   13,    1,   14,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -401,33 +398,38 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[7] =
+static const YY_CHAR yy_meta[15] =
     {   0,
-        1,    1,    1,    1,    1,    2
+        1,    1,    1,    1,    1,    1,    1,    2,    2,    1,
+        1,    2,    1,    1
     } ;
 
-static const flex_int16_t yy_base[19] =
+static const flex_int16_t yy_base[18] =
     {   0,
-        0,    0,   13,   14,   14,    2,    4,    0,    0,    0,
-        0,    0,    0,    0,    0,   14,   10,    9
+        0,    0,   18,   19,   19,   19,   19,    9,    0,   19,
+       19,   19,   19,    8,    0,   19,   13
     } ;
 
-static const flex_int16_t yy_def[19] =
+static const flex_int16_t yy_def[18] =
     {   0,
-       16,    1,   16,   16,   16,   16,   16,   17,    6,   17,
-        6,   18,    7,   17,   18,    0,   16,   16
+       16,    1,   16,   16,   16,   16,   16,   16,   17,   16,
+       16,   16,   16,   16,   17,    0,   16
     } ;
 
-static const flex_int16_t yy_nxt[21] =
+static const flex_int16_t yy_nxt[34] =
     {   0,
-        4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
-       15,   14,   16,    3,   16,   16,   16,   16,   16,   16
+        4,    5,    6,    7,    7,    7,    7,    8,    9,   10,
+       11,    4,   12,   13,   15,   14,   14,   16,    3,   16,
+       16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
+       16,   16,   16
     } ;
 
-static const flex_int16_t yy_chk[21] =
+static const flex_int16_t yy_chk[34] =
     {   0,
-        1,    1,    1,    1,    1,    1,    6,    6,    7,    7,
-       18,   17,    3,   16,   16,   16,   16,   16,   16,   16
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,   17,   14,    8,    3,   16,   16,
+       16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
+       16,   16,   16
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -444,14 +446,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "2018BCS034_2_3.lex"
-#line 2 "2018BCS034_2_3.lex"
-	int postiveno=0; 
-	int negtiveno=0; 
-	int positivefractions=0; 
-	int negativefractions=0; 
-#line 454 "lex.yy.c"
-#line 455 "lex.yy.c"
+#line 1 "2018BCS034_2_4.lex"
+#line 2 "2018BCS034_2_4.lex"
+#include <stdio.h> 
+#include <string.h> 
+	int operators_count = 0, operands_count = 0, valid = 1, top = -1, l = 0, j = 0; 
+	char operands[10][10], operators[10][10], stack[100]; 
+#line 456 "lex.yy.c"
+#line 457 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -668,10 +670,9 @@ YY_DECL
 		}
 
 	{
-#line 11 "2018BCS034_2_3.lex"
+#line 9 "2018BCS034_2_4.lex"
 
-
-#line 675 "lex.yy.c"
+#line 676 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -704,7 +705,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 14 );
+		while ( yy_base[yy_current_state] != 19 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -730,35 +731,104 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "2018BCS034_2_3.lex"
-postiveno++; 
+#line 10 "2018BCS034_2_4.lex"
+{ 
+	top++; 
+	stack[top] = '('; 
+} 
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "2018BCS034_2_3.lex"
-negtiveno++; 
+#line 14 "2018BCS034_2_4.lex"
+{ 
+	top++; 
+	stack[top] = '{'; 
+} 
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "2018BCS034_2_3.lex"
-positivefractions++; 
+#line 18 "2018BCS034_2_4.lex"
+{ 
+	top++; 
+	stack[top] = '['; 
+} 
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "2018BCS034_2_3.lex"
-negativefractions++; 
+#line 22 "2018BCS034_2_4.lex"
+{ 
+	if (stack[top] != '(') { 
+		valid = 0;	 
+	} 
+	else if(operands_count>0 && (operands_count-operators_count)!=1){ 
+		valid=0; 
+	} 
+	else{ 
+		top--; 
+		operands_count=1; 
+		operators_count=0; 
+	} 
+} 
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "2018BCS034_2_3.lex"
-; 
+#line 35 "2018BCS034_2_4.lex"
+{ 
+	if (stack[top] != '{') { 
+		valid = 0;	 
+	} 
+	else if(operands_count>0 && (operands_count-operators_count)!=1){ 
+		valid=0; 
+	} 
+	else{ 
+		top--; 
+		operands_count=1; 
+		operators_count=0; 
+	} 
+} 
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "2018BCS034_2_3.lex"
+#line 48 "2018BCS034_2_4.lex"
+{ 
+	if (stack[top] != '[') { 
+		valid = 0; 
+	} 
+	else if(operands_count>0 && (operands_count-operators_count)!=1){ 
+		valid=0; 
+	} 
+	else{ 
+		top--; 
+		operands_count=1; 
+		operators_count=0; 
+	} 
+		
+} 
+	YY_BREAK
+case 7:
+YY_RULE_SETUP
+#line 62 "2018BCS034_2_4.lex"
+{ 
+	operators_count++; 
+	strcpy(operators[l], yytext); 
+	l++; 
+} 
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 67 "2018BCS034_2_4.lex"
+{ 
+	operands_count++; 
+	strcpy(operands[j], yytext); 
+	j++; 
+} 
+	YY_BREAK
+case 9:
+YY_RULE_SETUP
+#line 72 "2018BCS034_2_4.lex"
 ECHO;
 	YY_BREAK
-#line 762 "lex.yy.c"
+#line 832 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1763,16 +1833,26 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 19 "2018BCS034_2_3.lex"
+#line 72 "2018BCS034_2_4.lex"
 
 
+
+int yywrap() 
+{ 
+	return 1; 
+} 
 int main() 
 { 
+	int k; 
+	printf("Enter the arithmetic expression: "); 
 	yylex(); 
-	printf("\nNo. of positive integers: %d", postiveno); 
-	printf("\nNo. of negative integers: %d", negtiveno); 
-	printf("\nNo. of positive fractions: %d", positivefractions); 
-	printf("\nNo. of negative fractions: %d\n", negativefractions); 
+
+	if (valid == 1 && top == -1) { 
+		printf("\nValid Expression\n"); 
+	} 
+	else
+		printf("\nInvalid Expression\n"); 
+
 	return 0; 
 } 
 
