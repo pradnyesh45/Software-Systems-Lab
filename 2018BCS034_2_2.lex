@@ -1,28 +1,25 @@
-/*lex code to count the number of lines, 
-    tabs and spaces used in the input*/
-
-%
-{
+%{
 #include <stdio.h>
-    int lc = 0, sc = 0, tc = 0, ch = 0; /*Global variables*/
-    %
-}
+    int lc = 0, sc = 0, nw = 0, ch = 0;
+%}
 
-/*Rule Section*/
-% % 
+%option noyywrap
+
+%% 
+. ch++;       //characters counter
+([a-zA-Z0-9])* nw++; //words counter
+([ ]) + sc++; //space counter
 \n lc++;    //line counter
-([]) + sc++; //space counter
-\t tc++;     //tab counter
-.ch++;       //characters counter
-% %
+
+%%
 
     main()
 {
-    // The function that starts the analysis
     yylex();
 
-    printf("\nNo. of lines=%d", lc);
+    printf("\nNo. of characters=%d", ch);
+    printf("\nNo. of words=%d", nw);
     printf("\nNo. of spaces=%d", sc);
-    printf("\nNo. of tabs=%d", tc);
-    printf("\nNo. of other characters=%d", ch);
+    printf("\nNo. of lines=%d", lc);
+
 }
