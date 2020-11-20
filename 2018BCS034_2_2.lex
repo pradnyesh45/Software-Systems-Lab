@@ -8,7 +8,6 @@
 %% 
 . ch++;       //characters counter
 ([a-zA-Z0-9])* nw++; //words counter
-([ ]) + sc++; //space counter
 \n lc++;    //line counter
 
 %%
@@ -19,7 +18,6 @@
 
     printf("\nNo. of characters=%d", ch);
     printf("\nNo. of words=%d", nw);
-    printf("\nNo. of spaces=%d", sc);
     printf("\nNo. of lines=%d", lc);
 
 }
