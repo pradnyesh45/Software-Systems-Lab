@@ -1,15 +1,15 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <curses.h>
+#include <stdlib.h>
 #include <string.h>
-int main()
+void main()
 {
-  FILE *f1, *f2, *f3, *f4;
+  FILE *f1, *f2, *f3, *f4, *fl;
   int lc, sa, l, op1, o, len;
   char m1[20], la[20], op[20], otp[20];
-  curscr;
-  f1 = fopen("input_3_2.txt", "r");
-  f3 = fopen("symtab_3_2.txt", "w");
+  f1 = fopen("input.txt", "r");
+  f3 = fopen("symtab.txt", "w");
+  fl = fopen("length.txt", "w");
   fscanf(f1, "%s %s %d", la, m1, &op1);
   if (strcmp(m1, "START") == 0)
   {
@@ -26,9 +26,9 @@ int main()
     printf("\n%d\t%s\t%s\t%s\n", lc, la, m1, op);
     if (strcmp(la, "-") != 0)
     {
-      fprintf(f3, "\n%d\t%s\n", lc, la);
+      fprintf(f3, "%d\t%s\t%s\t%s\n", lc, la, m1, op);
     }
-    f2 = fopen("optab_3_2.txt", "r");
+    f2 = fopen("optab.txt", "r");
     fscanf(f2, "%s %d", otp, &o);
     while (!feof(f2))
     {
@@ -41,7 +41,6 @@ int main()
     }
     fclose(f2);
     if (strcmp(m1, "WORD") == 0)
-
     {
       lc = lc + 3;
     }
@@ -69,9 +68,11 @@ int main()
   }
   if (strcmp(m1, "END") == 0)
   {
-    printf("Program length =\n%d", lc - sa);
+    fprintf(fl, "%d", lc - sa);
+    printf("\n\nProgram length =\n%d", lc - sa);
   }
   fclose(f1);
   fclose(f3);
+  fclose(fl);
   getch();
 }
